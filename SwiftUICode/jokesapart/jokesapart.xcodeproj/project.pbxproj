@@ -11,8 +11,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		512A75FF2ED635DB00252D1C /* jokesapart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = jokesapart.app; path = "/Users/omkarvijaybagade/Documents/Jokes-A-Part/SwiftUICode/jokesapart/build/Debug-iphoneos/jokesapart.app"; sourceTree = "<absolute>"; };
 		512A76022ED635DB00252D1C /* jokesapartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jokesapartApp.swift; sourceTree = "<group>"; };
+		518EB3A02ED6A7C100CC0C96 /* jokesapart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jokesapart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		518EB3CD2ED6AA6300CC0C96 /* jokesapart-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "jokesapart-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -42,9 +43,11 @@
 		512A75F62ED635DB00252D1C = {
 			isa = PBXGroup;
 			children = (
+				518EB3CD2ED6AA6300CC0C96 /* jokesapart-Info.plist */,
 				512A760E2ED637BC00252D1C /* Screens */,
 				512A760D2ED6373000252D1C /* Resources */,
 				512A76022ED635DB00252D1C /* jokesapartApp.swift */,
+				518EB3A02ED6A7C100CC0C96 /* jokesapart.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +74,7 @@
 			packageProductDependencies = (
 			);
 			productName = jokesapart;
-			productReference = 512A75FF2ED635DB00252D1C /* jokesapart.app */;
+			productReference = 518EB3A02ED6A7C100CC0C96 /* jokesapart.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -261,6 +264,7 @@
 				DEVELOPMENT_TEAM = W859K6A69U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "jokesapart-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,6 +297,7 @@
 				DEVELOPMENT_TEAM = W859K6A69U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "jokesapart-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
