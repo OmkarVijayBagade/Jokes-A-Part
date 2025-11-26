@@ -28,7 +28,7 @@ struct Home: View {
                     CurvedTopShape()
                         .fill(Color.theme.white)
                         .frame(height: 500)
-                    
+
                     VStack(spacing: 20) {
                         // Profile image
                         ZStack {
@@ -37,29 +37,17 @@ struct Home: View {
                                 .frame(width: 130, height: 130)
                                 .shadow(radius: 4)
                                 .overlay(
-<<<<<<< Updated upstream
-                                    ZStack{
-=======
                                     ZStack {
->>>>>>> Stashed changes
                                         Circle()
                                             .fill(Color.theme.white)
                                             .frame(width: 130, height: 130)
                                         Circle()
                                             .stroke(style: StrokeStyle(lineWidth: 4))
                                             .foregroundStyle(Color.theme.green)
-<<<<<<< Updated upstream
-                                            .shadow(color: Color.theme.green ,radius: 10,y:4)
-                                    }
-                                )
-                                .foregroundStyle(Color.theme.white)
-                            
-=======
                                             .shadow(color: Color.theme.green, radius: 10, y: 4)
                                     }
                                 )
 
->>>>>>> Stashed changes
                             Image(systemName: "person.fill")
                                 .resizable()
                                 .scaledToFit()
@@ -69,38 +57,13 @@ struct Home: View {
                         }
                         .offset(y: -60)
                         .padding(.bottom, -50)
-<<<<<<< Updated upstream
-                        
-=======
 
->>>>>>> Stashed changes
                         Text("Username")
                             .foregroundStyle(Color.theme.darkGreen)
                             .font(Font.custom("IrishGrover-Regular", size: 60))
 
                         Text("Todays Joke")
                             .foregroundStyle(Color.theme.darkGreen)
-<<<<<<< Updated upstream
-                            .font(
-                                Font.custom("InstrumentSerif-Regular", size: 40)
-                            )
-                        
-                        Text(
-                            "\"Decided to go to a Italian restaurant kyunki woh gharke PASTA.\""
-                        )
-                        .frame(width: 286, height: 150)
-                        .font(Font.custom("InstrumentSerif-Regular", size: 30))
-                        
-                        //Button
-                        Button(action: {}) {
-                            Text("Refresh")
-                                .foregroundStyle(Color.theme.white)
-                                .frame(width: 148, height: 35)
-                                .font(
-                                    Font.custom("IrishGrover-Regular", size: 30)
-                                )
-                            
-=======
                             .font(Font.custom("InstrumentSerif-Regular", size: 40))
 
                         Text("\"Decided to go to a Italian restaurant kyunki woh gharke PASTA.\"")
@@ -112,45 +75,10 @@ struct Home: View {
                             Text("Refresh")
                                 .foregroundStyle(Color.theme.white)
                                 .font(Font.custom("IrishGrover-Regular", size: 30))
->>>>>>> Stashed changes
                                 .frame(width: 200, height: 50)
                                 .background(Color.theme.green)
                                 .clipShape(RoundedRectangle(cornerRadius: 50))
                         }
-<<<<<<< Updated upstream
-                        .shadow(color: Color.darkGreen, radius: 10, y: 4)
-                    }.padding(.top, 5)
-                }
-            }
-            Spacer().frame(height: 60)
-            
-            //bottom navbar
-            HStack {
-                // MARK: - Bottom Navbar
-                            HStack(spacing: 30) {
-                                navButton(icon: "house.fill", active: true)
-                                navButton(icon: "square.stack.fill")
-                                navButton(icon: "info.circle")
-                            }
-                            .frame(maxHeight: .infinity, alignment: .bottom)
-                            .padding(.bottom, 25)
-            }.padding(.bottom, 20)
-        }
-    }
-    
-    private func navButton(icon: String, active: Bool = false) -> some View {
-        Button(action: {}) {
-            Image(systemName: icon)
-                .font(.system(size: 36))
-                .frame(width: 80, height: 55)
-                .background(active ? Color.theme.green : Color.theme.white)
-                .foregroundStyle(active ? Color.theme.white : Color.theme.darkGreen)
-                .clipShape(RoundedRectangle(cornerRadius: 35))
-                .shadow(color:Color.theme.darkGreen,radius: active ? 0 : 3)
-        }
-    }
-    
-=======
                         .shadow(color: Color.theme.darkGreen, radius: 10, y: 4)
                     }
                     .padding(.top, 5)
@@ -167,40 +95,21 @@ struct Home: View {
         }
     }
 
->>>>>>> Stashed changes
     struct CurvedTopShape: Shape {
         func path(in rect: CGRect) -> Path {
             var path = Path()
             
-<<<<<<< Updated upstream
-            //start bottom left
-            path.move(to: CGPoint(x: 0, y: rect.height))
-            
-            //line to top left
-            path.addLine(to: CGPoint(x: 0, y: 80))
-            
-            //big curve across top
-            path.addQuadCurve(
-                to: CGPoint(x: rect.width, y: 80),
-                control: CGPoint(x: rect.width / 2, y: -80)
-            )
-            
-            // Right side vertical down
-            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
-            
-            // Close path
-=======
             path.move(to: CGPoint(x: 0, y: rect.height))
             path.addLine(to: CGPoint(x: 0, y: 80))
             path.addQuadCurve(to: CGPoint(x: rect.width, y: 80), control: CGPoint(x: rect.width / 2, y: -80))
             path.addLine(to: CGPoint(x: rect.width, y: rect.height))
->>>>>>> Stashed changes
             path.closeSubpath()
             
             return path
         }
     }
 }
+
 #Preview {
     Home()
 }
