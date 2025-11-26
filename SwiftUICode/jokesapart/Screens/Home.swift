@@ -34,7 +34,7 @@ struct Home: View {
                         .frame(height: 400)  // Main shape height
                         .offset(y: 150)
 
-                    VStack(spacing: 15) {  // Reduced spacing slightly for a tighter look
+                    VStack(spacing: 15) {  
                         // Profile image
                         ZStack {
                             Circle()
