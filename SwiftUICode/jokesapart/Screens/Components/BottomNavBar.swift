@@ -1,8 +1,8 @@
 //
-//  BottomNavBar.swift
-//  jokesapart
+// BottomNavBar.swift
+// jokesapart
 //
-//  Created by Omkar Vijay Bagade on 26/11/25.
+// Created by Omkar Vijay Bagade on 26/11/25.
 //
 
 import SwiftUI
@@ -10,17 +10,18 @@ import SwiftUI
 struct BottomNavBar: View {
     var activeIndex: Int = 0
     var action: ((Int) -> Void)? = nil
-    
+
     var body: some View {
         HStack(spacing: 30) {
             navButton(icon: "house.fill", index: 0)
             navButton(icon: "square.stack.fill", index: 1)
             navButton(icon: "info.circle", index: 2)
         }
-        .frame(maxHeight: .infinity, alignment: .bottom)
-        .padding(.bottom, 25)
+        .frame(alignment: .bottom)
+        // .background(Color.red.opacity(0.1))
+        // .padding(.bottom, 20)
     }
-    
+
     @ViewBuilder
     private func navButton(icon: String, index: Int) -> some View {
         Button(action: {
