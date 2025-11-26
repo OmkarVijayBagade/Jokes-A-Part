@@ -13,7 +13,7 @@ extension Color{
 }
 struct ColorTheme{
     let accent = Color("AccentColor")
-    let background = Color("BackgroundColor")
+    let white = Color("White")
     let star = Color("StarColor")
     let green = Color("Green")
     let darkGreen = Color("DarkGreen")

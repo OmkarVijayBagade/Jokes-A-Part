@@ -13,5 +13,6 @@ struct jokesapartApp: App {
         WindowGroup {
             Onboarding()
         }
+        
     }
 }
