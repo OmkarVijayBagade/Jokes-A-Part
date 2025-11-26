@@ -1,57 +1,67 @@
 //
-//  Profile.swift
-//  jokesapart
+// Profile.swift
+// jokesapart
 //
-//  Created by Omkar Vijay Bagade on 26/11/25.
+// Created by Omkar Vijay Bagade on 26/11/25.
 //
 
 import SwiftUI
 
 struct Profile: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Color.theme.white.ignoresSafeArea()
-            VStack{
+            
+            VStack {
                 Text("Profile")
                     .font(Font.custom("IrishGrover-Regular", size: 80))
-                ZStack{
+                
+                ZStack {
                     Circle()
-                        .stroke(style: StrokeStyle(lineWidth: 5, dash: [20,30]))
-                        .frame(width: 185,height:185)
+                        .stroke(style: StrokeStyle(lineWidth: 5, dash: [20, 30]))
+                        .frame(width: 185, height: 185)
+                    
                     Circle()
                         .fill(Color.theme.green)
-                        .frame(width: 175,height:175)
+                        .frame(width: 175, height: 175)
                         .overlay(
                             Image(systemName: "person.crop.circle")
                                 .resizable()
                                 .scaledToFit()
                         )
                 }
-                Spacer().frame(height:40)
+                
+                Spacer().frame(height: 40)
                 
                 Rectangle()
                     .fill(Color.theme.darkGreen)
-                    .frame(width: 300,height: 1)
+                    .frame(width: 300, height: 1)
                 
-                VStack(alignment:.leading){
-                    //username
-                    VStack(alignment:.leading){
+                VStack(alignment: .leading) {
+                    // username
+                    VStack(alignment: .leading) {
                         Text("Username:")
                             .font(Font.custom("IrishGrover-Regular", size: 40))
+                        
                         Text("Omkar Bagade")
                             .font(Font.custom("InriaSans-Regular", size: 25))
                     }
-                    Spacer().frame(height:10)
-                    //email
-                    VStack(alignment:.leading){
+                    
+                    Spacer().frame(height: 10)
+                    
+                    // email
+                    VStack(alignment: .leading) {
                         Text("Email:")
                             .font(Font.custom("IrishGrover-Regular", size: 40))
+                        
                         Text("omkarbagade16@gmail.com")
                             .font(Font.custom("InriaSans-Regular", size: 25))
                     }
                 }
+                
                 Spacer()
-                //Button
+                
+                // Button
                 Button(action: {}) {
                     HStack {
                         Text("Log Out")
@@ -63,19 +73,20 @@ struct Profile: View {
                     .background(Color.red)
                     .clipShape(RoundedRectangle(cornerRadius: 50))
                 }
-                .shadow(color: Color.red ,radius: 10,y:4)
-                .offset(y:20)
+                .shadow(color: Color.red, radius: 10, y: 4)
+                .offset(y: 20)
                 
                 Spacer().frame(height: 60)
-
+                
+                // Note: .foregroundStyle applied here affects all views above it in the VStack
                 .foregroundStyle(Color.theme.darkGreen)
+                
                 // Bottom navbar
                 BottomNavBar(activeIndex: 0) { index in
                     print("Tapped nav index: \(index)")
                 }
-                .padding(.bottom, 20)
+                .padding(.bottom, 10)
             }
-            
         }
     }
 }
