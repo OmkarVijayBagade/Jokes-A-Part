@@ -25,13 +25,13 @@ Latest screenshots are available in the /Designs folder.
 
 <p align="left">
     <img src="Design/OnboardingScreen.png" alt="Onboarding Screen" width="180"/>
-    <img src="Screenshots/HomeScreen.png" alt="Home Screen" width="180"/>
-    <img src="Screenshots/SignInScreen.png" alt="SignIn Screen" width="180"/>
-    <img src="Screenshots/LibraryScreen.png" alt="Library Screen" width="180"/>
-    <img src="Screenshots/LibraryShareSheet.png" alt="LibraryShareSheet Screen" width="180"/>
-	<img src="Screenshots/AboutScreen.png" alt="About Screen" width="180"/>
-    <img src="Screenshots/ProfileScreen.png" alt="Profile Screen" width="180"/>
-    <img src="Screenshots/FavouritesScreen.png" alt="Favourites Screen" width="180"/>
+    <img src="Design/HomeScreen.png" alt="Home Screen" width="180"/>
+    <img src="Design/SignInScreen.png" alt="SignIn Screen" width="180"/>
+    <img src="Design/LibraryScreen.png" alt="Library Screen" width="180"/>
+    <img src="Design/LibraryShareSheet.png" alt="LibraryShareSheet Screen" width="180"/>
+	<img src="Design/AboutScreen.png" alt="About Screen" width="180"/>
+    <img src="Design/ProfileScreen.png" alt="Profile Screen" width="180"/>
+    <img src="Design/FavouritesScreen.png" alt="Favourites Screen" width="180"/>
 </p>
 ---
 
