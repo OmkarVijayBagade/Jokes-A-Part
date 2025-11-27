@@ -16,15 +16,24 @@ The app supports:
     •    ☁️ Firebase backend for authentication & user data
 
 This project is built to learn end-to-end iOS development, from design → development → deployment.
-
-⸻
+---
 
 # 🎨 Figma Design
 
 All UI screens are designed from scratch in Figma.
 Latest screenshots are available in the /Designs folder.
 
-⸻
+<p align="left">
+    <img src="Design/OnboardingScreen.png" alt="Onboarding Screen" width="180"/>
+    <img src="Screenshots/HomeScreen.png" alt="Home Screen" width="180"/>
+    <img src="Screenshots/SignInScreen.png" alt="SignIn Screen" width="180"/>
+    <img src="Screenshots/LibraryScreen.png" alt="Library Screen" width="180"/>
+    <img src="Screenshots/LibraryShareSheet.png" alt="LibraryShareSheet Screen" width="180"/>
+	<img src="Screenshots/AboutScreen.png" alt="About Screen" width="180"/>
+    <img src="Screenshots/ProfileScreen.png" alt="Profile Screen" width="180"/>
+    <img src="Screenshots/FavouritesScreen.png" alt="Favourites Screen" width="180"/>
+</p>
+---
 
 # 🏗️ Tech Stack
     •    SwiftUI
@@ -34,14 +43,14 @@ Latest screenshots are available in the /Designs folder.
     •    Haptics + Animations
     •    GitHub Flow Workflow (Issues → Branch → PR → Merge)
 
-⸻
+---
 
 # 🚧 Project Status
 
 This project is currently in active development.
 New features are being tracked through GitHub Issues and merged via Pull Requests.
 
-⸻
+---
 
 # 📌 Roadmap
     •    Figma UI Design
@@ -55,7 +64,7 @@ New features are being tracked through GitHub Issues and merged via Pull Request
     •    Add Favourites
     •    App Store polish + animations
 
-⸻
+---
 
 # 💪 Why This Project?
 
