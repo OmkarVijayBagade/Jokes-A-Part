@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Favourites: View {
+struct FavouritesView: View {
     let dummyRows = Array(0..<8)
 
     var body: some View {
@@ -28,11 +28,7 @@ struct Favourites: View {
                     .padding(.top, 10)
                 }
 
-                // Bottom navbar
-                BottomNavBar(activeIndex: 2) { index in
-                    print("Tapped nav index: \(index)")
-                }
-                .padding(.bottom, 10)
+                
             }
         }
     }
@@ -40,5 +36,5 @@ struct Favourites: View {
 
 
 #Preview {
-    Favourites()
+    FavouritesView()
 }

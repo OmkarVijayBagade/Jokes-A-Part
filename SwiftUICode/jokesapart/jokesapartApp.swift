@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct jokesapartApp: App {
+    @StateObject private var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            Onboarding()
+            RootView()
+                .environmentObject(appState)
         }
         
     }
