@@ -17,7 +17,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
-
 @main
 struct jokesapartApp: App {
     @StateObject private var appState = AppState()

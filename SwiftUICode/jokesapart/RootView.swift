@@ -14,7 +14,8 @@ struct RootView: View {
         Group {
             if !appState.hasSeenOnboarding {
                 OnboardingView()
-            } else if !appState.isSignedIn {
+            }
+            else if !appState.isSignedIn {
                 SignInView()
             } else {
                 MainView()

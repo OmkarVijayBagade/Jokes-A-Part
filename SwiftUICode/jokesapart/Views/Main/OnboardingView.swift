@@ -49,13 +49,22 @@ struct OnboardingView: View {
 
                     // MAIN BUTTON
                     Button(action: {
+                        // Mark onboarding as done
                         appState.hasSeenOnboarding = true
+
+                        // Force the app to show SignInView
+                        appState.isSignedIn = false
+
+                        // Reset account-created alert
+                        appState.didJustCreatedAccount = false
                     }) {
                         HStack {
                             Text("Lets Go")
                                 .foregroundStyle(Color.theme.white)
                                 .frame(width: 148, height: 35)
-                                .font(Font.custom("IrishGrover-Regular", size: 30))
+                                .font(
+                                    Font.custom("IrishGrover-Regular", size: 30)
+                                )
 
                             Image(systemName: "arrow.right")
                                 .resizable()
@@ -67,8 +76,8 @@ struct OnboardingView: View {
                         .background(Color.theme.green)
                         .clipShape(RoundedRectangle(cornerRadius: 50))
                     }
-                    .padding(.top,-50)
-                    .shadow(color: Color.theme.darkGreen ,radius: 10,y:4)
+                    .padding(.top, -50)
+                    .shadow(color: Color.theme.darkGreen, radius: 10, y: 4)
 
                     Spacer()
 
@@ -77,7 +86,7 @@ struct OnboardingView: View {
                             Text("Already have an Account?")
                             Button("Sign In") {
                                 appState.hasSeenOnboarding = true
-                                appState.isSignedIn = false     // Goes to SignInView
+                                appState.isSignedIn = false  // Goes to SignInView
                             }
                             .foregroundStyle(Color.theme.green)
                         }

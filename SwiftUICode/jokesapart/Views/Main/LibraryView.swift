@@ -19,10 +19,6 @@ struct LibraryView: View {
                             .clipped()
                             .ignoresSafeArea()
 
-                        TriangleShape()
-                            .fill(Color.white)
-                            .frame(width: .infinity, height: 300)
-
                         Text("Library")
                             .font(Font.custom("IrishGrover-Regular", size: 54))
                             .foregroundColor(.theme.darkGreen)
