@@ -5,21 +5,26 @@
 //  Created by Omkar Vijay Bagade on 27/11/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 import SwiftUI
+import FirebaseAuth
 
 class AuthViewModel: ObservableObject {
-    @Published var email: String = "omkar@gmail.com"
-    @Published var password: String = "1234"
-    
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var errorMessage: String = ""
+
     func signIn(appState: AppState) {
-        // Fake sign in logic
-        // In real app, call backend or Firebase auth here.
-        if !email.isEmpty && !password.isEmpty {
-            appState.isSignedIn = true
-        } else {
-            print("Enter details first")
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error{
+                self.errorMessage = error.localizedDescription
+                print("Sign-in error: \(error.localizedDescription)")
+                return
+            }
+            DispatchQueue.main.async {
+                            appState.isSignedIn = true
+                        }
         }
     }
 }
