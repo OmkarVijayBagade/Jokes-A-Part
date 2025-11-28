@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import Firebase
+
+
 
 @main
 struct jokesapartApp: App {
     @StateObject private var appState = AppState()
+    init(){
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
