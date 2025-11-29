@@ -7,6 +7,15 @@
 
 import Foundation
 
-struct Joke: Codable{
-    let joke: String 
+/// Model returned by the remote API (matches icanhazdadjoke response)
+struct APIJoke: Codable {
+    let id: String
+    let joke: String
+    let status: Int?
+}
+
+/// Local model used by the app (Identifiable & Codable for local use)
+struct Joke: Identifiable, Codable {
+    let id: String
+    let joke: String
 }
