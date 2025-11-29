@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var service = JokeService()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -75,21 +77,25 @@ struct HomeView: View {
                         .foregroundStyle(Color.theme.darkGreen.opacity(0.9))
                         .font(Font.custom("InstrumentSerif-Regular", size: 30))
                     
-                    Text("\"Decided to go to a Italian restaurant kyunki woh gharke PASTA.\"")
+                    Text("\"\(service.currentJoke)\"")
                         .font(Font.custom("InstrumentSerif-Regular", size: 24))
                         .frame(maxWidth: 300)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(Color.theme.darkGreen.opacity(0.85))
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        print("Refresh button pressed")
+                        service.fetchJoke()
+                    }) {
                         Text("Refresh")
                             .font(Font.custom("IrishGrover-Regular", size: 26))
                             .frame(width: 180, height: 48)
                             .foregroundStyle(Color.theme.white)
                             .background(Color.theme.green)
                             .clipShape(RoundedRectangle(cornerRadius: 40))
-                    }
-//                    .padding(.top, 50)
+                    }.onAppear(
+                        perform: service.fetchJoke
+                    )
                     .shadow(color: Color.theme.darkGreen.opacity(0.5), radius: 8, y: 3)
                     
                     Spacer()
