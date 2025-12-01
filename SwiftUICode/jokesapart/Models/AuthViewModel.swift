@@ -73,4 +73,20 @@ class AuthViewModel: ObservableObject {
             completion(true)
         }
     }
+    
+    //log out of the app
+    func logOut(appState: AppState){
+        do{
+            try Auth.auth().signOut()
+            appState.isSignedIn = false
+            appState.didJustCreatedAccount = false
+            email = ""
+            password = ""
+            print("Logged Out successfully.")
+            
+        }catch let signOutError{
+            print("Error signing out: \(signOutError.localizedDescription)")
+            self.errorMessage = signOutError.localizedDescription
+        }
+    }
 }

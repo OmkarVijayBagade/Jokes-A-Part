@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileView: View {
+    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
+    @State private var selectedImage: UIImage?
+    @State private var showPicker = false
+    
     var body: some View {
         ZStack {
             Color.theme.white.ignoresSafeArea()
@@ -22,16 +29,45 @@ struct ProfileView: View {
                             style: StrokeStyle(lineWidth: 5, dash: [20, 30])
                         )
                         .frame(width: 185, height: 185)
-
-                    Circle()
-                        .fill(Color.theme.green)
-                        .frame(width: 175, height: 175)
-                        .overlay(
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .scaledToFit()
-                        )
+                    if let image = selectedImage{
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 175,height:175)
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                showPicker.toggle()
+                            }
+                    }else {
+                        Circle()
+                            .fill(Color.theme.green)
+                            .frame(width: 175, height: 175)
+                            .overlay(
+                                Image(systemName: "person.crop.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(25)
+                                    .foregroundColor(.white)
+                            )
+                            .onTapGesture {
+                                showPicker.toggle()
+                            }
+                    }
                 }
+                .photosPicker(
+                    isPresented: $showPicker,
+                    selection: Binding(
+                        get: { nil },
+                        set: { item in
+                            Task {
+                                if let data = try? await item?.loadTransferable(type: Data.self) {
+                                    selectedImage = UIImage(data: data)
+                                }
+                            }
+                        }
+                    ),
+                    matching: .images
+                )
 
                 Spacer().frame(height: 40)
 
@@ -64,7 +100,9 @@ struct ProfileView: View {
                 Spacer()
 
                 // logout Button
-                Button(action: {}) {
+                Button(action: {
+                    authViewModel.logOut(appState: appState)
+                }) {
                     HStack {
                         Text("Log Out")
                             .foregroundStyle(Color.theme.white)
@@ -84,6 +122,3 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView()
-}

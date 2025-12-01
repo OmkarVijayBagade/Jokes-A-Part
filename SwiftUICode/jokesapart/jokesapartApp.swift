@@ -20,12 +20,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct jokesapartApp: App {
     @StateObject private var appState = AppState()
+    @StateObject var authViewModel = AuthViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(appState)
+                .environmentObject(authViewModel)
         }
         
     }
